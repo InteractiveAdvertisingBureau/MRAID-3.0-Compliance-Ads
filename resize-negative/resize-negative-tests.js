@@ -39,7 +39,7 @@ function readyCheck() {
         // You can specify done function, timeout (for how long to wait for events), log and error functions
         startTests(_mraid, () => {
             console.log('[ALL NEGATIVE RESIZE TESTS FINISHED]')
-        }, 500, console.log, console.error);
+        }, 5000, console.log, console.error);
     }
 }
 // ============================================================================
