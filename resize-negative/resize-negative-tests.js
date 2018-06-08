@@ -31,6 +31,9 @@ function readyCheck() {
         expand: function () {}
     };
 
+    logDiv = document.getElementById('resize_negative_tests_log');
+    logDiv.style = 'margin:10px';
+
     var _mraid = window.mraid || fakeMraid;
 
     if (_mraid.getState() === 'loading') {
@@ -39,9 +42,29 @@ function readyCheck() {
         // You can specify done function, timeout (for how long to wait for events), log and error functions
         startTests(_mraid, () => {
             console.log('[ALL NEGATIVE RESIZE TESTS FINISHED]')
-        }, 5000, console.log, console.error);
+        }, 2000, logInfoOnUi, logErrorOnUi);
     }
 }
+
+var logDiv;
+
+function logOnUi(color, message) {
+    var messageDiv = document.createElement('div');
+    messageDiv.innerText =  '[' + new Date().toLocaleString() + '] ' + message;
+    messageDiv.style = 'width:100%;padding: 10px 0px;padding-right:10px;color:' + color;
+    logDiv.appendChild(messageDiv);
+}
+
+function logInfoOnUi(message) {
+    logOnUi('dodgerblue', message);
+    console.log(message);
+}
+
+function logErrorOnUi(message) {
+    logOnUi('tomato', message);
+    console.error(message);
+}
+
 // ============================================================================
 
 /**
@@ -301,6 +324,7 @@ function EventTester(tests, event, description, mraid, waitInterval, log, error)
     EventTester.prototype.start = function (complete) {
         this.complete = complete;
         this.index = 0;
+        this.log('Starting: [' + this.description + ']');
         this.run();
     };
     EventTester.prototype.done = function (err, test) {
@@ -318,7 +342,8 @@ function EventTester(tests, event, description, mraid, waitInterval, log, error)
             try {
                 this.testEvent(test, this.done, this.index);
             } catch (err) {
-                this.error('Error in test', err);
+                console.log(err);
+                this.error('Error in test:' + ' ' + err + ', ' + (err && err.message));
             }
             this.moveNext();
         } else {
