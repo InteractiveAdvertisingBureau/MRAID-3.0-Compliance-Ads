@@ -32,10 +32,6 @@ Open mockTester.html in a browser to see a demonstration of what the output shou
 
 See also the list of [contributors](https://github.com/InteractiveAdvertisingBureau/MRAID-3.0-Compliance-Ads/contributors) who participated in this project.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
 ## Acknowledgments
 
 * This project uses the Chart.js library http://chartjs.org/
