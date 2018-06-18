@@ -8,7 +8,7 @@ Each node on the horizontal axis represents a single exposureChange event.
 
 ## Getting Started
 
-Clone this repository to your development environment and run the markup in ad.html an ad webview on the target SDK.
+Clone this repository to your development environment and run the markup in ad.html in an ad webview on the target SDK.
 
 Note: this ad requires at least 100px of vertical space so that the lines of the chart can render legibly.
 
