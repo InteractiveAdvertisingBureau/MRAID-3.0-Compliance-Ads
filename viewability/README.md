@@ -12,6 +12,16 @@ Clone this repository to your development environment and run the markup in ad.h
 
 Note: this ad requires at least 100px of vertical space so that the lines of the chart can render legibly.
 
+## Error Messages
+
+If the ad detects one of the following scenarios, it will attempt to display a message describing the problem.
+* No object named mraid is defined after loading mraid.js
+* The global variable MRAID_ENV is undefined
+* The function mraid.getVersion returns a version that is not either a numeric or string representation of the number 3
+* When handling an exposureChange event, the exposedPercentage parameter does not match the MRAID 3.0 specification for that object
+* When handling an exposureChange event, the visibleRectangle object (if not null) does not match the MRAID 3.0 specification for that object
+* When handling an exposureChange event, the occlusionRectangles array (if not null) does not match the MRAID 3.0 specification for that array
+
 ### Demo
 
 Open mockTester.html in a browser to see a demonstration of what the output should look like under happy path conditions.
