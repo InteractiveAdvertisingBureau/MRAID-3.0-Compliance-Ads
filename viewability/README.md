@@ -30,7 +30,7 @@ Open mockTester.html in a browser to see a demonstration of what the output shou
 
 * **Patrick Brady**
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/InteractiveAdvertisingBureau/MRAID-3.0-Compliance-Ads/contributors) who participated in this project.
 
 ## License
 
