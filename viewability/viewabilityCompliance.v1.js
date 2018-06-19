@@ -14601,4 +14601,9 @@ function checkViewabilityCompliance() {
     initViewabilityChart();
 }
 
-mraidInit();
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", mraidInit)
+}
+else {
+  mraidInit();
+}
